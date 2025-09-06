@@ -34,6 +34,13 @@ def factor_utilizacion(tareas):
 
     return fu
 
+def planificable_rr(tareas):
+    sumatoria = 0
+    for tarea in tareas:
+        sumatoria += tarea.tiempoEjecucion
+    
+    return sumatoria <= tareas[-1].vencimiento
+
 def planificable_liu_rm(tareas):
     cantidadTareas = len(tareas)
 

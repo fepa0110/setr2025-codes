@@ -5,8 +5,11 @@ def joseph(tareas):
     tqPrevio = 0
 
     sumatoria = 0
-        
-    for tareaActual in range(0, len(tareas)):
+    
+    print("Tarea actual: 1 --> ",tareas[0])
+    print("R1 = C1 = {}\n".format(tareas[0].tiempoEjecucion))
+
+    for tareaActual in range(1, len(tareas)):
         tq = 0
         tqPrevio = 0
         q = 1
