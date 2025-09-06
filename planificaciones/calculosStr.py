@@ -44,7 +44,7 @@ def planificable_rr(tareas):
 def planificable_liu_rm(tareas):
     cantidadTareas = len(tareas)
 
-    return factor_utilizacion(tareas) <= cantidadTareas * (math.exp2(1/cantidadTareas) - 1)
+    return cantidadTareas * (math.exp2(1/cantidadTareas) - 1)
 
 def planificable_liu_edf(tareas):
     return factor_utilizacion(tareas) <= 1
@@ -56,6 +56,4 @@ def planificable_bini(tareas):
         fu = tarea.tiempoEjecucion / tarea.periodo
         resultado = resultado * (fu + 1)
         
-        if(resultado > 2): return False
-    
-    return resultado <= 2
+    return resultado

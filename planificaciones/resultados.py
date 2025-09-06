@@ -61,9 +61,13 @@ mostrar_str(tareas)
 print("H = ",hiperperiodo(tareas))
 factor_utilizacion_print(tareas)
 print("\nPlanificable por RR? {}".format(planificable_rr(tareas)))
-print("Planificable por Liu(RM)? {}".format(planificable_liu_rm(tareas)))
+
+cotaLiu = planificable_liu_rm(tareas)
+print("Planificable por Liu(RM)? {} - {}".format(f'{cotaLiu:.2f}', factor_utilizacion(tareas) <= cotaLiu))
 print("Planificable por Liu(EDF)? {}".format(planificable_liu_edf(tareas)))
-print("Planificable por Bini(RM)? {}\n".format(planificable_bini(tareas)))
+
+cotaBini = planificable_bini(tareas)
+print("Planificable por Bini(RM)? {} - {}\n".format(f'{cotaBini:.4f}', cotaBini <=2))
 es_planificable = joseph(tareas)
 
 if(es_planificable):
