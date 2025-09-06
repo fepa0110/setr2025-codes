@@ -5,7 +5,8 @@ def joseph(tareas):
     tqPrevio = 0
 
     sumatoria = 0
-    
+    planificable = True
+
     print("Tarea actual: 1 --> ",tareas[0])
     print("R1 = C1 = {}\n".format(tareas[0].tiempoEjecucion))
 
@@ -26,6 +27,7 @@ def joseph(tareas):
 
             if(tq > tareas[tareaActual].vencimiento):
                 print("\nSistema no planificable")
+                planificable = False
                 finAlgoritmo = True
             else: 
                 if(tq == tqPrevio):
@@ -37,6 +39,7 @@ def joseph(tareas):
                     
                     q = q+1
                     sumatoria = 0
+    return planificable
 
 def ranuraLibrePorJoseph(tareas):
     tareas.append(Tarea(1,1,1))

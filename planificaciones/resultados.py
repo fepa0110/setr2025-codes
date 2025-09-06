@@ -64,9 +64,10 @@ print("\nPlanificable por RR? {}".format(planificable_rr(tareas)))
 print("Planificable por Liu(RM)? {}".format(planificable_liu_rm(tareas)))
 print("Planificable por Liu(EDF)? {}".format(planificable_liu_edf(tareas)))
 print("Planificable por Bini(RM)? {}\n".format(planificable_bini(tareas)))
-joseph(tareas)
+es_planificable = joseph(tareas)
 
-print("\nCalculo de ranura libre\n")
-ranuraLibrePorJoseph(tareas)
+if(es_planificable):
+    print("\nCalculo de ranura libre\n")
+    ranuraLibrePorJoseph(tareas)
 
 # print(math.lcm(4,5,8))
